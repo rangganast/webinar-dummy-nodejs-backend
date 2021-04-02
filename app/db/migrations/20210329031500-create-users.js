@@ -8,22 +8,29 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING
-      },
       email: {
         type: Sequelize.STRING
       },
+      password: {
+        type: Sequelize.STRING,
+      },
+      username: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: true
       },
       bio: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: true
       },
       image: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: true
       },
-      organizer_id: {
+      organizerId: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {

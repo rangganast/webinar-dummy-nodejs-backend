@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Event.belongsTo(models.Organizer, {
-        foreignKey: "organizer_id",
+        foreignKey: "organizerId",
         as: "organizer"
       })
     }

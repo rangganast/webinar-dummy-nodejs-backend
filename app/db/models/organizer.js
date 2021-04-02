@@ -6,14 +6,14 @@ module.exports = (sequelize, DataTypes) => {
   class Organizer extends Model {
     static associate(models) {
       Organizer.hasMany(models.Event, {
-        foreignKey: "organizer_id",
+        foreignKey: "organizerId",
         as: "events",
         onDelete: "CASCADE",
         onUpdate: "CASCADE"
       });
 
-      Organizer.hasOne(models.Users, {
-        foreignKey: "organizer_id",
+      Organizer.hasOne(models.User, {
+        foreignKey: "organizerId",
         as: "organizer",
         onDelete: "CASCADE",
         onUpdate: "CASCADE"

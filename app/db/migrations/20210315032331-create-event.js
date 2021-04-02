@@ -15,12 +15,24 @@ module.exports = {
         type: Sequelize.STRING
       },
       image: {
-        type: Sequelize.BLOB
+        type: Sequelize.STRING
       },
       quota: {
         type: Sequelize.INTEGER
       },
-      organizer_id: {
+      registrationStart: {
+        type: Sequelize.DATE
+      },
+      registrationEnd: {
+        type: Sequelize.DATE
+      },
+      eventStart: {
+        type: Sequelize.DATE
+      },
+      eventEnd: {
+        type: Sequelize.DATE
+      },
+      organizerId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
