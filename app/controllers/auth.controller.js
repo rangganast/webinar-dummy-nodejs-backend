@@ -60,3 +60,17 @@ exports.login = (req, res) => {
         });
     });
 };
+
+exports.profile = (req, res) => {
+    User.findByPk(req.userId, { attributes: { exclude: ['password'] }})
+    .then(user => {
+        return res.status(200).json({
+            user: user
+        });
+    })
+    .catch(err => {
+        return res.status(500).json({
+            error: err.message
+        })
+    });
+};
