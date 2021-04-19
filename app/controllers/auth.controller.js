@@ -74,3 +74,25 @@ exports.profile = (req, res) => {
         })
     });
 };
+
+exports.userEvents = async (req, res) => {
+    await User.findByPk(req.userId)
+    .then(user => {
+        user.getEvents()
+        .then(events => {
+            return res.status(200).json({
+                data: events
+            });
+        })
+        .catch(err => {
+            return res.status(500).json({
+                error: err.message
+            });
+        });
+    })
+    .catch(err => {
+        return res.status(500).json({
+            error: err.message
+        });
+    });
+};

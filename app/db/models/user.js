@@ -9,7 +9,13 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsTo(models.Organizer, {
         foreignKey: "organizerId",
         as: "organizer"
-      })
+      });
+
+      User.belongsToMany(models.Event, {
+        // foreignKey: "userId",
+        // as: "user",
+        through: "User_Events"
+      });
     }
   };
   User.init({

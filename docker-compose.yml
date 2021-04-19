@@ -7,10 +7,13 @@ services:
             - "db"
         ports:
             - "3000:3000"
-        env_file:
-            - .env
         environment:
+            - "DB_DEV_USERNAME=postgres"
+            - "DB_DEV_PASSWORD=postgres"
+            - "DB_DEV_DATABASE=webinar_backend"
             - "DB_DEV_HOST=db"
+            - "DB_DEV_DIALECT=postgres"
+            - "SECRET=thisissecret"
 
     db:
         container_name: "db"

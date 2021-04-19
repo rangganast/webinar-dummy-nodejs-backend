@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       Event.belongsTo(models.Organizer, {
         foreignKey: "organizerId",
         as: "organizer"
-      })
+      });
+
+      Event.belongsToMany(models.User, {
+        through: "User_Events"
+      });
     }
   };
   Event.init({
@@ -26,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     registrationEnd: DataTypes.DATE,
     eventStart: DataTypes.DATE,
     eventEnd: DataTypes.DATE,
-    organizer_id: DataTypes.INTEGER
+    organizerId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Event',

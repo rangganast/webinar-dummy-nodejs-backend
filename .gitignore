@@ -1,5 +1,9 @@
+# FOLDERS
 node_modules
+app/static/images
+
+# FILES
 package-lock.json
 .env
 .dockerignore
-.gitignore
+!.gitignore

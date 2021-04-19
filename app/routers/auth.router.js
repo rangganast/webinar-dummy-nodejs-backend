@@ -11,4 +11,6 @@ router.post('/login', loginValidationRules(), loginValidate, controller.login);
 
 router.get('/profile', middlewares.verifyToken, controller.profile);
 
+router.get('/userevents', middlewares.verifyToken, controller.userEvents);
+
 module.exports = router;
